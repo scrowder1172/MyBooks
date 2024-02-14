@@ -168,7 +168,7 @@ struct EditBookView: View {
 
 #Preview {
     
-    let preview: PreviewContainer = PreviewContainer([Book.self])
+    let preview: PreviewContainer = PreviewContainer(models: [Book.self])
     return NavigationStack {
         EditBookView(book: Book.sampleBooks.randomElement()!)
             .modelContainer(preview.container)

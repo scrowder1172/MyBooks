@@ -80,9 +80,15 @@ struct BookListView: View {
     }
 }
 
-#Preview {
-    let preview: PreviewContainer = PreviewContainer([Book.self])
-    preview.addExamples(Book.sampleBooks)
+#Preview("Book List Empty") {
+    let previewContainer: PreviewContainer = PreviewContainer(models: [Book.self])
     return BookListView()
-        .modelContainer(preview.container)
+        .modelContainer(previewContainer.container)
+}
+
+#Preview("Book List") {
+    let previewContainer: PreviewContainer = PreviewContainer(models: [Book.self])
+    previewContainer.addExamples(examples: Book.sampleBooks)
+    return BookListView()
+        .modelContainer(previewContainer.container)
 }
