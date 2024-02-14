@@ -14,6 +14,8 @@
 		52F4C2222B7D346B008F6B58 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F4C2212B7D346B008F6B58 /* Launch Screen.storyboard */; };
 		52F4C2242B7D518A008F6B58 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4C2232B7D518A008F6B58 /* Book.swift */; };
 		52F4C2262B7D554D008F6B58 /* NewBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4C2252B7D554D008F6B58 /* NewBookView.swift */; };
+		52F4C2282B7D5D77008F6B58 /* EditBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4C2272B7D5D77008F6B58 /* EditBookView.swift */; };
+		52F4C22C2B7D655C008F6B58 /* RatingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4C22B2B7D655C008F6B58 /* RatingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		52F4C2212B7D346B008F6B58 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		52F4C2232B7D518A008F6B58 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		52F4C2252B7D554D008F6B58 /* NewBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookView.swift; sourceTree = "<group>"; };
+		52F4C2272B7D5D77008F6B58 /* EditBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookView.swift; sourceTree = "<group>"; };
+		52F4C22B2B7D655C008F6B58 /* RatingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +64,9 @@
 				52F4C2132B7D32D4008F6B58 /* MyBooksApp.swift */,
 				52F4C2152B7D32D4008F6B58 /* BookListView.swift */,
 				52F4C2252B7D554D008F6B58 /* NewBookView.swift */,
+				52F4C2272B7D5D77008F6B58 /* EditBookView.swift */,
 				52F4C2232B7D518A008F6B58 /* Book.swift */,
+				52F4C22B2B7D655C008F6B58 /* RatingsView.swift */,
 				52F4C2172B7D32D5008F6B58 /* Assets.xcassets */,
 				52F4C2192B7D32D5008F6B58 /* Preview Content */,
 				52F4C2212B7D346B008F6B58 /* Launch Screen.storyboard */,
@@ -148,6 +154,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				52F4C2262B7D554D008F6B58 /* NewBookView.swift in Sources */,
+				52F4C22C2B7D655C008F6B58 /* RatingsView.swift in Sources */,
+				52F4C2282B7D5D77008F6B58 /* EditBookView.swift in Sources */,
 				52F4C2162B7D32D4008F6B58 /* BookListView.swift in Sources */,
 				52F4C2142B7D32D4008F6B58 /* MyBooksApp.swift in Sources */,
 				52F4C2242B7D518A008F6B58 /* Book.swift in Sources */,
