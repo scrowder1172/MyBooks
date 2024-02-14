@@ -40,10 +40,6 @@ final class Book {
         self.rating = rating
         self.status = status
     }
-    
-    #if DEBUG
-    static var SampleData: Book = Book(title: "Sample Book", author: "Random Writer")
-    #endif
 }
 
 enum Status: Int, Codable, Identifiable, CaseIterable {

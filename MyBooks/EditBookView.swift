@@ -167,15 +167,10 @@ struct EditBookView: View {
 }
 
 #Preview {
-    do {
-        let config: ModelConfiguration = ModelConfiguration(isStoredInMemoryOnly: true)
-        let container: ModelContainer = try ModelContainer(for: Book.self, configurations: config)
-        let book: Book = Book(title: "Sample Data", author: "Pete Peterson")
-        return NavigationStack{
-            EditBookView(book: book)
-        }
-            .modelContainer(container)
-    } catch {
-        return Text("Failed to create container: \(error.localizedDescription)")
+    
+    let preview: PreviewContainer = PreviewContainer([Book.self])
+    return NavigationStack {
+        EditBookView(book: Book.sampleBooks.randomElement()!)
+            .modelContainer(preview.container)
     }
 }
