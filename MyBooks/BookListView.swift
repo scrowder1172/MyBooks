@@ -12,13 +12,48 @@ struct BookListView: View {
     
     @Environment(\.modelContext) var modelContext
     
+    @Query(sort: \Book.title) private var books: [Book]
+    
     @State private var createNewBook: Bool = false
     
     var body: some View {
         NavigationStack {
-            VStack {
-                Text("Sample Data")
-                    .font(.headline)
+            Group {
+                if books.isEmpty {
+                    ContentUnavailableView("Enter your first book", systemImage: "book.fill")
+                } else {
+                    List {
+                        ForEach(books) { book in
+                            NavigationLink {
+                                Text(book.title)
+                                    .font(.headline)
+                            } label: {
+                                HStack(spacing: 10) {
+                                    book.icon
+                                    
+                                    VStack(alignment: .leading) {
+                                        Text(book.title)
+                                            .font(.headline)
+                                        Text(book.author)
+                                            .font(.subheadline)
+                                            .foregroundStyle(.secondary)
+                                        if let rating = book.rating {
+                                            HStack {
+                                                ForEach(0..<rating, id: \.self) { _ in
+                                                    Image(systemName: "star.fill")
+                                                        .imageScale(.small)
+                                                        .foregroundStyle(.yellow)
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .onDelete(perform: deleteBook)
+                    }
+                    .listStyle(.plain)
+                }
             }
             .navigationTitle("My Books")
             .toolbar {
@@ -35,6 +70,13 @@ struct BookListView: View {
                 NewBookView()
                     .presentationDetents([.medium])
             }
+        }
+    }
+    
+    func deleteBook(for offsets: IndexSet) {
+        for offset in offsets {
+            let book: Book = books[offset]
+            modelContext.delete(book)
         }
     }
 }
