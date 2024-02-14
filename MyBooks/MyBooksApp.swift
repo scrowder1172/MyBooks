@@ -16,4 +16,11 @@ struct MyBooksApp: App {
         }
         .modelContainer(for: Book.self)
     }
+    
+    init() {
+        #if DEBUG
+        /// capture database file location for initial development and debugging
+        print("Database file: \(URL.applicationSupportDirectory.path(percentEncoded: false))")
+        #endif
+    }
 }
