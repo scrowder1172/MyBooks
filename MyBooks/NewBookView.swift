@@ -19,7 +19,10 @@ struct NewBookView: View {
         NavigationStack {
             Form {
                 TextField("Book Title", text: $title)
+                    .textInputAutocapitalization(.words)
                 TextField("Author", text: $author)
+                    .textContentType(.name)
+                    .textInputAutocapitalization(.words)
                 Button("Create") {
                     let newBook: Book = Book(title: title, author: author)
                     modelContext.insert(newBook)
