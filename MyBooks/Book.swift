@@ -5,8 +5,8 @@
 //  Created by SCOTT CROWDER on 2/14/24.
 //
 
-import Foundation
 import SwiftData
+import SwiftUI
 
 @Model
 final class Book {
@@ -18,6 +18,17 @@ final class Book {
     var summary: String
     var rating: Int?
     var status: Status
+    
+    var icon: Image {
+        switch status {
+        case .onShelf:
+            Image(systemName: "checkmark.diamond.fill")
+        case .inProgress:
+            Image(systemName: "book.fill")
+        case .completed:
+            Image(systemName: "books.vertical.fill")
+        }
+    }
     
     init(title: String, author: String, dateAdded: Date = Date(), dateStarted: Date = Date.distantPast, dateCompleted: Date = Date.distantPast, summary: String = "", rating: Int? = nil, status: Status = .onShelf) {
         self.title = title
