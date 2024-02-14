@@ -12,6 +12,7 @@
 		52F4C2182B7D32D5008F6B58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52F4C2172B7D32D5008F6B58 /* Assets.xcassets */; };
 		52F4C21B2B7D32D5008F6B58 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52F4C21A2B7D32D5008F6B58 /* Preview Assets.xcassets */; };
 		52F4C2222B7D346B008F6B58 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52F4C2212B7D346B008F6B58 /* Launch Screen.storyboard */; };
+		52F4C2242B7D518A008F6B58 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4C2232B7D518A008F6B58 /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		52F4C2172B7D32D5008F6B58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52F4C21A2B7D32D5008F6B58 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		52F4C2212B7D346B008F6B58 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		52F4C2232B7D518A008F6B58 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			children = (
 				52F4C2132B7D32D4008F6B58 /* MyBooksApp.swift */,
 				52F4C2152B7D32D4008F6B58 /* ContentView.swift */,
+				52F4C2232B7D518A008F6B58 /* Book.swift */,
 				52F4C2172B7D32D5008F6B58 /* Assets.xcassets */,
 				52F4C2192B7D32D5008F6B58 /* Preview Content */,
 				52F4C2212B7D346B008F6B58 /* Launch Screen.storyboard */,
@@ -143,6 +146,7 @@
 			files = (
 				52F4C2162B7D32D4008F6B58 /* ContentView.swift in Sources */,
 				52F4C2142B7D32D4008F6B58 /* MyBooksApp.swift in Sources */,
+				52F4C2242B7D518A008F6B58 /* Book.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
