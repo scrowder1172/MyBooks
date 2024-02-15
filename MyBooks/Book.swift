@@ -20,6 +20,8 @@ final class Book {
     var rating: Int?
     var status: Status.RawValue
     var recommendedBy: String = ""
+    @Relationship(deleteRule: .cascade)
+    var quotes: [Quote]?
     
     var icon: Image {
         switch Status(rawValue: status)! {
