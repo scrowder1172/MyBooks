@@ -19,10 +19,11 @@ struct EditBookView: View {
     @State private var rating: Int?
     @State private var title: String = ""
     @State private var author: String = ""
-    @State private var summary: String = ""
+    @State private var synopsis: String = ""
     @State private var dateAdded: Date = Date.distantPast
     @State private var dateStarted: Date = Date.distantPast
     @State private var dateCompleted: Date = Date.distantPast
+    @State private var recommendedBy: String = ""
     
     @State private var firstView: Bool = true
     
@@ -31,10 +32,11 @@ struct EditBookView: View {
         || rating != book.rating
         || title != book.title
         || author != book.author
-        || summary != book.summary
+        || synopsis != book.synopsis
         || dateAdded != book.dateAdded
         || dateStarted != book.dateStarted
         || dateCompleted != book.dateCompleted
+        || recommendedBy != book.recommendedBy
     }
     
     var body: some View {
@@ -131,11 +133,18 @@ struct EditBookView: View {
                     .foregroundStyle(.secondary)
             }
             
+            LabeledContent {
+                TextField("", text: $recommendedBy)
+            } label: {
+                Text("Recommended By")
+                    .foregroundStyle(.secondary)
+            }
+            
             Divider()
             
-            Text("Summary")
+            Text("Synopsis")
                 .foregroundStyle(.secondary)
-            TextEditor(text: $summary)
+            TextEditor(text: $synopsis)
                 .padding(5)
                 .overlay(
                     RoundedRectangle(cornerRadius: 20)
@@ -146,22 +155,30 @@ struct EditBookView: View {
         .textFieldStyle(.roundedBorder)
         .navigationTitle(title)
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden()
         .toolbar {
             if changed {
-                Button("Update") {
-                    print("Original start: \(book.dateStarted)")
-                    print("New start: \(dateStarted)")
-                    book.status = status.rawValue
-                    book.rating = rating
-                    book.title = title
-                    book.author = author
-                    book.summary = summary
-                    book.dateAdded = dateAdded
-                    book.dateStarted = dateStarted
-                    book.dateCompleted = dateCompleted
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Update") {
+                        book.status = status.rawValue
+                        book.rating = rating
+                        book.title = title
+                        book.author = author
+                        book.synopsis = synopsis
+                        book.dateAdded = dateAdded
+                        book.dateStarted = dateStarted
+                        book.dateCompleted = dateCompleted
+                        book.recommendedBy = recommendedBy
+                        dismiss()
+                    }
+                    .buttonStyle(.borderedProminent)
+                }
+            }
+            
+            ToolbarItem(placement: .topBarLeading) {
+                Button(changed ? "Cancel" : "Back") {
                     dismiss()
                 }
-                .buttonStyle(.borderedProminent)
             }
         }
         .onAppear {
@@ -172,16 +189,19 @@ struct EditBookView: View {
             rating = book.rating
             title = book.title
             author = book.author
-            summary = book.summary
+            synopsis = book.synopsis
             dateAdded = book.dateAdded
             dateStarted = book.dateStarted
             dateCompleted = book.dateCompleted
+            recommendedBy = book.recommendedBy
         }
     }
 }
 
 #Preview {
-    SwiftDataViewer(preview: PreviewContainer(models: [Book.self])) {
-        EditBookView(book: Book.sampleBooks.randomElement()!)
+    NavigationStack {
+        SwiftDataViewer(preview: PreviewContainer(models: [Book.self])) {
+            EditBookView(book: Book.sampleBooks.randomElement()!)
+        }
     }
 }
