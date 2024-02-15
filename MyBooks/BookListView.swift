@@ -8,52 +8,29 @@
 import SwiftData
 import SwiftUI
 
+enum SortOrder: String, Identifiable, CaseIterable {
+    case status, title, author
+    
+    var id: Self {self}
+}
+
 struct BookListView: View {
-    
-    @Environment(\.modelContext) var modelContext
-    
-    @Query(sort: \Book.title) private var books: [Book]
-    
     @State private var createNewBook: Bool = false
+    
+    @State private var sortOrder: SortOrder = SortOrder.status
     
     var body: some View {
         NavigationStack {
-            Group {
-                if books.isEmpty {
-                    ContentUnavailableView("Enter your first book", systemImage: "book.fill")
-                } else {
-                    List {
-                        ForEach(books) { book in
-                            NavigationLink {
-                                EditBookView(book: book)
-                            } label: {
-                                HStack(spacing: 10) {
-                                    book.icon
-                                    
-                                    VStack(alignment: .leading) {
-                                        Text(book.title)
-                                            .font(.headline)
-                                        Text(book.author)
-                                            .font(.subheadline)
-                                            .foregroundStyle(.secondary)
-                                        if let rating = book.rating {
-                                            HStack {
-                                                ForEach(1..<rating, id: \.self) { _ in
-                                                    Image(systemName: "star.fill")
-                                                        .imageScale(.small)
-                                                        .foregroundStyle(.yellow)
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        .onDelete(perform: deleteBook)
-                    }
-                    .listStyle(.plain)
+            
+            Picker("", selection: $sortOrder) {
+                ForEach(SortOrder.allCases) { sortOrder in
+                    Text("Sort By \(sortOrder.rawValue)")
+                        .tag(sortOrder)
                 }
             }
+            .buttonStyle(.bordered)
+            
+            BookList(sortOrder: sortOrder)
             .navigationTitle("My Books")
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -69,13 +46,6 @@ struct BookListView: View {
                 NewBookView()
                     .presentationDetents([.medium])
             }
-        }
-    }
-    
-    func deleteBook(for offsets: IndexSet) {
-        for offset in offsets {
-            let book: Book = books[offset]
-            modelContext.delete(book)
         }
     }
 }

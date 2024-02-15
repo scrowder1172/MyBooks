@@ -19,6 +19,7 @@
 		52F4C22E2B7D7D1C008F6B58 /* BookSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4C22D2B7D7D1C008F6B58 /* BookSamples.swift */; };
 		52F4C2302B7D7EAF008F6B58 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4C22F2B7D7EAF008F6B58 /* PreviewContainer.swift */; };
 		52F4C2352B7E86BF008F6B58 /* SwiftDataViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4C2342B7E86BF008F6B58 /* SwiftDataViewer.swift */; };
+		52F4C2372B7E8C44008F6B58 /* BookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4C2362B7E8C44008F6B58 /* BookList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		52F4C22D2B7D7D1C008F6B58 /* BookSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSamples.swift; sourceTree = "<group>"; };
 		52F4C22F2B7D7EAF008F6B58 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		52F4C2342B7E86BF008F6B58 /* SwiftDataViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataViewer.swift; sourceTree = "<group>"; };
+		52F4C2362B7E8C44008F6B58 /* BookList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 			children = (
 				52F4C2132B7D32D4008F6B58 /* MyBooksApp.swift */,
 				52F4C2152B7D32D4008F6B58 /* BookListView.swift */,
+				52F4C2362B7E8C44008F6B58 /* BookList.swift */,
 				52F4C2252B7D554D008F6B58 /* NewBookView.swift */,
 				52F4C2272B7D5D77008F6B58 /* EditBookView.swift */,
 				52F4C2232B7D518A008F6B58 /* Book.swift */,
@@ -164,6 +167,7 @@
 			files = (
 				52F4C22E2B7D7D1C008F6B58 /* BookSamples.swift in Sources */,
 				52F4C2262B7D554D008F6B58 /* NewBookView.swift in Sources */,
+				52F4C2372B7E8C44008F6B58 /* BookList.swift in Sources */,
 				52F4C22C2B7D655C008F6B58 /* RatingsView.swift in Sources */,
 				52F4C2352B7E86BF008F6B58 /* SwiftDataViewer.swift in Sources */,
 				52F4C2282B7D5D77008F6B58 /* EditBookView.swift in Sources */,
@@ -311,6 +315,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -340,6 +345,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
