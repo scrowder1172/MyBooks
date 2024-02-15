@@ -17,16 +17,16 @@ final class Book {
     var dateCompleted: Date
     var summary: String
     var rating: Int?
-    var status: Status
+    var status: Status.RawValue
     
     var icon: Image {
-        switch status {
+        switch Status(rawValue: status)! {
         case .onShelf:
-            Image(systemName: "checkmark.diamond.fill")
+            Image(systemName: "books.vertical.fill")
         case .inProgress:
             Image(systemName: "book.fill")
         case .completed:
-            Image(systemName: "books.vertical.fill")
+            Image(systemName: "checkmark.diamond.fill")
         }
     }
     
@@ -38,7 +38,7 @@ final class Book {
         self.dateCompleted = dateCompleted
         self.summary = summary
         self.rating = rating
-        self.status = status
+        self.status = status.rawValue
     }
 }
 
