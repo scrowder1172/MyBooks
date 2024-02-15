@@ -167,10 +167,7 @@ struct EditBookView: View {
 }
 
 #Preview {
-    
-    let preview: PreviewContainer = PreviewContainer(models: [Book.self])
-    return NavigationStack {
+    SwiftDataViewer(preview: PreviewContainer(models: [Book.self])) {
         EditBookView(book: Book.sampleBooks.randomElement()!)
-            .modelContainer(preview.container)
     }
 }

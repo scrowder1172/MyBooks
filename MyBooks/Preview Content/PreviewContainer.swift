@@ -21,10 +21,10 @@ struct PreviewContainer {
         }
     }
     
-    func addExamples(examples: [any PersistentModel]) {
+    func addSampleData(sampleDataItems: [any PersistentModel]) {
         Task { @MainActor in
-            examples.forEach { example in
-                container.mainContext.insert(example)
+            sampleDataItems.forEach { sample in
+                container.mainContext.insert(sample)
             }
         }
     }
