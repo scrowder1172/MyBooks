@@ -20,6 +20,8 @@
 		52F4C2302B7D7EAF008F6B58 /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4C22F2B7D7EAF008F6B58 /* PreviewContainer.swift */; };
 		52F4C2352B7E86BF008F6B58 /* SwiftDataViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4C2342B7E86BF008F6B58 /* SwiftDataViewer.swift */; };
 		52F4C2372B7E8C44008F6B58 /* BookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4C2362B7E8C44008F6B58 /* BookList.swift */; };
+		52F4C2392B7EB8E6008F6B58 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4C2382B7EB8E6008F6B58 /* Quote.swift */; };
+		52F4C23B2B7EB9E6008F6B58 /* QuotesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F4C23A2B7EB9E6008F6B58 /* QuotesListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		52F4C22F2B7D7EAF008F6B58 /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		52F4C2342B7E86BF008F6B58 /* SwiftDataViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataViewer.swift; sourceTree = "<group>"; };
 		52F4C2362B7E8C44008F6B58 /* BookList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookList.swift; sourceTree = "<group>"; };
+		52F4C2382B7EB8E6008F6B58 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		52F4C23A2B7EB9E6008F6B58 /* QuotesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 				52F4C2272B7D5D77008F6B58 /* EditBookView.swift */,
 				52F4C2232B7D518A008F6B58 /* Book.swift */,
 				52F4C22B2B7D655C008F6B58 /* RatingsView.swift */,
+				52F4C2382B7EB8E6008F6B58 /* Quote.swift */,
+				52F4C23A2B7EB9E6008F6B58 /* QuotesListView.swift */,
 				52F4C2172B7D32D5008F6B58 /* Assets.xcassets */,
 				52F4C2212B7D346B008F6B58 /* Launch Screen.storyboard */,
 				52F4C2192B7D32D5008F6B58 /* Preview Content */,
@@ -168,8 +174,10 @@
 				52F4C22E2B7D7D1C008F6B58 /* BookSamples.swift in Sources */,
 				52F4C2262B7D554D008F6B58 /* NewBookView.swift in Sources */,
 				52F4C2372B7E8C44008F6B58 /* BookList.swift in Sources */,
+				52F4C23B2B7EB9E6008F6B58 /* QuotesListView.swift in Sources */,
 				52F4C22C2B7D655C008F6B58 /* RatingsView.swift in Sources */,
 				52F4C2352B7E86BF008F6B58 /* SwiftDataViewer.swift in Sources */,
+				52F4C2392B7EB8E6008F6B58 /* Quote.swift in Sources */,
 				52F4C2282B7D5D77008F6B58 /* EditBookView.swift in Sources */,
 				52F4C2162B7D32D4008F6B58 /* BookListView.swift in Sources */,
 				52F4C2142B7D32D4008F6B58 /* MyBooksApp.swift in Sources */,
