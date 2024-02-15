@@ -27,7 +27,7 @@ struct EditBookView: View {
     @State private var firstView: Bool = true
     
     var changed: Bool {
-        status != book.status
+        status.rawValue != book.status
         || rating != book.rating
         || title != book.title
         || author != book.author
@@ -59,6 +59,7 @@ struct EditBookView: View {
                 }
                 
                 if status == .inProgress || status == .completed {
+                    
                     LabeledContent {
                         DatePicker("", selection: $dateStarted, in: dateAdded...Date.now, displayedComponents: .date)
                     } label: {
@@ -77,26 +78,34 @@ struct EditBookView: View {
             .foregroundStyle(.secondary)
             .onChange(of: status) { oldValue, newValue in
                 if !firstView {
+                    print("firstView => false")
                     if newValue == .onShelf {
                         /// Book put back on shelf to read
                         dateStarted = Date.distantPast
                         dateCompleted = Date.distantPast
+                        print("Status change: newValue = onShelf")
                     } else if newValue == .inProgress && oldValue == .completed {
                         /// Book restarted
                         dateStarted = Date.now
                         dateCompleted = Date.distantPast
+                        print("Status change: newValue = inProgress, oldValue = completed")
                     } else if newValue == .inProgress && oldValue == .onShelf {
                         /// Book started
                         dateStarted = Date.now
+                        print("Status change: newValue = inProgress, oldValue = onShelf")
                     } else if newValue == .completed && oldValue == .onShelf {
                         /// Book completed but forgot to mark as in progress
                         dateCompleted = Date.now
                         dateStarted = dateAdded
+                        print("Status change: newValue = completed, oldValue = onshelf")
                     } else {
                         /// Book completed
                         dateCompleted = Date.now
+                        print("Status change: newValue = completed")
                     }
+                } else {
                     firstView = false
+                    print("Set firstView => false")
                 }
             }
             
@@ -140,7 +149,9 @@ struct EditBookView: View {
         .toolbar {
             if changed {
                 Button("Update") {
-                    book.status = status
+                    print("Original start: \(book.dateStarted)")
+                    print("New start: \(dateStarted)")
+                    book.status = status.rawValue
                     book.rating = rating
                     book.title = title
                     book.author = author
@@ -154,7 +165,10 @@ struct EditBookView: View {
             }
         }
         .onAppear {
-            status = book.status
+            status = Status(rawValue: book.status)!
+            if status == .onShelf {
+                firstView = false
+            }
             rating = book.rating
             title = book.title
             author = book.author
