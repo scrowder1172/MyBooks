@@ -135,6 +135,7 @@ struct GenresView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     let preview: PreviewContainer = PreviewContainer(models: [Book.self])
     let books: [Book] = Book.sampleBooks
@@ -145,3 +146,4 @@ struct GenresView: View {
     return GenresView(book: books[1])
         .modelContainer(preview.container)
 }
+#endif

@@ -40,8 +40,10 @@ struct NewGenreView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     SwiftDataViewer(preview: PreviewContainer(models: [Book.self])) {
         NewGenreView()
     }
 }
+#endif

@@ -52,6 +52,7 @@ struct BookListView: View {
     }
 }
 
+#if DEBUG
 #Preview("Book List Empty") {
     SwiftDataViewer(preview: PreviewContainer(models: [Book.self])) {
         BookListView()
@@ -73,3 +74,4 @@ struct BookListView: View {
     return BookListView()
         .modelContainer(preview.container)
 }
+#endif

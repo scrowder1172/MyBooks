@@ -226,6 +226,7 @@ struct EditBookView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     NavigationStack {
         SwiftDataViewer(preview: PreviewContainer(models: [Book.self])) {
@@ -233,3 +234,4 @@ struct EditBookView: View {
         }
     }
 }
+#endif

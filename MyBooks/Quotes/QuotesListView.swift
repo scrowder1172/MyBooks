@@ -106,6 +106,7 @@ struct QuotesListView: View {
     }
 }
 
+#if DEBUG
 #Preview("PreviewContainer") {
     let previewContainer: PreviewContainer = PreviewContainer(models: [Book.self])
     let books: [Book] = Book.sampleBooks
@@ -125,3 +126,4 @@ struct QuotesListView: View {
         }
     }
 }
+#endif

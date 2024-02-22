@@ -53,8 +53,10 @@ struct GenreStackView: View {
     }
 }
 
+#if DEBUG
 #Preview {
     SwiftDataViewer(preview: PreviewContainer(models: [Book.self])) {
         GenreStackView(genres: Genre.sampleGenres)
     }
 }
+#endif

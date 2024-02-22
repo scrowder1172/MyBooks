@@ -88,6 +88,7 @@ struct BookList: View {
     }
 }
 
+#if DEBUG
 #Preview {
     NavigationStack{
         SwiftDataViewer(preview: PreviewContainer(models: [Book.self]), items: Book.sampleBooks) {
@@ -95,3 +96,4 @@ struct BookList: View {
         }
     }
 }
+#endif
