@@ -1,11 +1,11 @@
 {
   "images" : [
     {
+      "filename" : "appstore1024.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "MyBooks_1024x1024@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
