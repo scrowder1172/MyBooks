@@ -1,6 +1,6 @@
 # My Books iOS App
 
-## Based off Vidoe series from Stewart Lynch
+## Based off Video series from Stewart Lynch
 
 This is an iOS app that tracks which books a user wants to read, is reading, and has read. They can add genres and capture their favorite quotes.
 
